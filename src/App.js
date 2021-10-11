@@ -13,11 +13,13 @@ import { Details } from "./screens/Details";
 import { Home } from "./screens/Home";
 import { SignIn } from "./screens/SignIn";
 
+
 function App() {
   return (
     <BrowserRouter>
       {/* <Route component={NavBar}></Route> */}
       <NavBar />
+      <br />
 
       <Route path="/policy" component={AddPolicy}></Route>
       <Route path="/home" component={Home}></Route>

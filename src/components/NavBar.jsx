@@ -12,7 +12,7 @@ export const NavBar = (props) => {
 
   return (
     <React.Fragment>
-      <nav className="navbar navbar-expand-lg navbar-primary bg-dark d-flex">
+      <nav className="navbar navbar-expand-lg navbar-light d-flex" style={{"backgroundColor":"#6193D0 "}}>
         <div className="container   ">
           <span className="navbar-brand">
             <NavLink
@@ -20,8 +20,8 @@ export const NavBar = (props) => {
               activeClassName="navBarBrandActive"
               to="/"
             >
-              <img src="images/bank.png" alt="" style={{ width: "1.5rem" }} />{" "}
-              Delta Bank
+              <img src="images/bank.png" alt="" style={{ width: "2.3rem",paddingBottom:"6px" }} />{" "}
+              DELTA BANK
             </NavLink>
           </span>
           <button
@@ -42,7 +42,7 @@ export const NavBar = (props) => {
             <div className="navbar-nav">
               {userInfo ? (
                 <>
-                  <p className="nav-link active" aria-current="page">
+                  {/* <p className="nav-link active" aria-current="page">
                     <NavLink
                       to="#"
                       className="navButton"
@@ -50,7 +50,7 @@ export const NavBar = (props) => {
                     >
                       Add Partner
                     </NavLink>
-                  </p>
+                  </p> */}
                   <p
                     className="nav-link"
                     // onClick={() => props.history.push("/policy")}

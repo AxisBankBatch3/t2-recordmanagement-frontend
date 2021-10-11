@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { userSignin } from "../actions/UserAction";
+import img1 from "../img/employer.svg";
+import { TextField, Button, Divider } from "@material-ui/core";
+import styled from "styled-components";
 
 export const SignIn = (props) => {
   const dispatch = useDispatch();
@@ -19,14 +22,116 @@ export const SignIn = (props) => {
     // props.history.push("/home");
   };
   useEffect(() => {
-    if (userInfo) {
+    // if (userInfo) {
+    //   props.history.push("/home");
+    // }
+
+    if(!userInfo.isAdmin){
       props.history.push("/home");
+    }else if(userInfo.isAdmin){
+      props.history.push("/admindashboard");
+    }else{
+      props.history.push("/signin");
     }
   }, [props.history, userInfo, dispatch]);
 
   return (
     <>
-      <form
+
+<Parent>
+        <div className="row">
+          <div className="col-md-6 overflow-hidden">
+            <img className="img-fluid " src={img1} alt="" />
+          </div>
+         
+          <div className="col-md-6">
+          <form onSubmit={submitHandler}>
+            <FormStyle >
+              {/* {error ? <Alert severity="error">{error}</Alert> : ""} */}
+              <h3 className="mb-4 mt-2">Partner Login</h3>
+              <div className="mb-3 mt-3">
+                <TextField
+                  type="text"
+                  id="email"
+                  label="Enter Email"
+                  variant="outlined"
+
+                  color="primary"
+                  fullWidth
+                  size="small"
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                />
+              </div>
+              <div className="mt-3 mb-3">
+                <TextField
+                  type="password"
+                  id="password"
+                  label="Enter Password"
+                  variant="outlined"
+                  color="primary"
+                  fullWidth
+                  size="small"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <Button
+                className="mb-3 mt-3"
+                // disabled={loading}
+                variant="contained"
+                color="primary"
+                type="submit"
+              >
+                LogIn
+              </Button>
+              <Divider light />
+             
+              
+            </FormStyle>
+            </form>
+          </div>
+          
+        </div>
+      
+       
+      </Parent>
+    </>
+  );
+}
+
+const Parent = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FormStyle = styled.div`
+  max-width: 500px;
+  /* background-color: aqua; */
+  padding: 1rem;
+`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <form
         onSubmit={submitHandler}
         style={{
           border: "1px solid",
@@ -79,8 +184,8 @@ export const SignIn = (props) => {
           {/* <Link class="form-label" for="form1Example2">
             Forget Password
           </Link> */}
-        </div>
-      </form>
-    </>
-  );
-};
+        {/* </div> */}
+      {/* </form> */} 
+    // </>
+  // );
+// };

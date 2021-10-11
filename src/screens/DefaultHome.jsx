@@ -8,7 +8,7 @@ export const DefaultHome = () => {
       <div className="container">
         <div className="row">
           <HomeCarousel />
-        </div>{" "}
+        </div>{" "}<br/>
         <div className="row">
           <section id="hero" class="d-flex align-items-center">
             <div class="container">

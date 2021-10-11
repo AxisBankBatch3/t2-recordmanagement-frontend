@@ -39,10 +39,11 @@
 
 .navBarBrand {
   text-decoration: none;
+  font-size: x-large;
 }
 .navBarBrandActive {
   text-decoration: none;
-  color: white;
+  color: rgb(246, 243, 243);
 }
 
 .navButtons {
@@ -53,11 +54,12 @@
 }
 .navButton {
   text-decoration: none;
+  color: white;
 }
 
 .navButtonActive {
   text-decoration: none;
-  color: white;
+  color: rgb(216, 38, 38);
 }
 
 .breadLink {

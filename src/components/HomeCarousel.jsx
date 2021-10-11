@@ -6,6 +6,8 @@ const HomeCarousel = () => {
       id="carouselExampleCaptions"
       class="carousel slide"
       data-bs-ride="carousel"
+      
+    
     >
       <div class="carousel-indicators">
         <button
@@ -32,8 +34,8 @@ const HomeCarousel = () => {
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="https://picsum.photos/1600/200"
-            class="d-block w-100"
+            src="https://picsum.photos/1600/250"
+            class="d-block w-100 rounded-pill"
             alt="CarouselImage"
           />
           <div class="carousel-caption d-none d-md-block">
@@ -43,8 +45,8 @@ const HomeCarousel = () => {
         </div>
         <div class="carousel-item">
           <img
-            src="https://picsum.photos/1600/200?random=2"
-            class="d-block w-100"
+            src="https://picsum.photos/1600/250?random=2"
+            class="d-block w-100 rounded-pill"
             alt="CarouselImage"
           />
           <div class="carousel-caption d-none d-md-block">
@@ -54,8 +56,8 @@ const HomeCarousel = () => {
         </div>
         <div class="carousel-item">
           <img
-            src="https://picsum.photos/1600/200?random=3"
-            class="d-block w-100"
+            src="https://picsum.photos/1600/250?random=3"
+            class="d-block w-100 rounded-pill"
             alt="CarouselImage"
           />
           <div class="carousel-caption d-none d-md-block">

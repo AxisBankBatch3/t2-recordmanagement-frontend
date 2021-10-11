@@ -26,7 +26,7 @@ export const Home = (props) =>{
     return(
         <>
 
-<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0"  style={{marginTop:"30px",marginLeft:"30px"}}>
   <thead>
     <tr>
       <th class="th-sm" style={{textAlign:"center"}}>Client Name
@@ -55,7 +55,7 @@ export const Home = (props) =>{
             <td>{data.clientName}</td>
             <td>{data.emailId}</td>
             <td>{data.mobile}</td>
-            <td style={{textAlign:"center"}}><button type="button" class="btn btn-warning btn-rounded" onClick={()=>{props.history.push({ pathname: "/details", state: data.id })}}>View More</button></td>
+            <td style={{textAlign:"center"}}><button type="button" class="btn btn-info btn-rounded" onClick={()=>{props.history.push({ pathname: "/details", state: data.id })}}>Details</button></td>
             
           </tr>
           
