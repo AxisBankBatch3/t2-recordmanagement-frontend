@@ -57,7 +57,7 @@ export const allPolocyDetails = () => async (dispatch, getState) => {
     signInDetails: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.get(`${baseAPI.DOCUMENT_API}/policyholders`, {
+    const { data } = await Axios.get(`${baseAPI.DOCUMENT_API}/allpolicyholders`, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },

@@ -99,6 +99,8 @@ export const AddPolicy = (props) => {
 
     console.log(formData);
     dispatch(addPolicy(formData));
+    props.history.push("/home");
+    window.alert("policy added successfully");
     
    
     

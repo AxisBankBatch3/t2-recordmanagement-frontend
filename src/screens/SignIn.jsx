@@ -7,7 +7,7 @@ import { userSignin } from "../actions/UserAction";
 import img1 from "../img/employer.svg";
 import { TextField, Button, Divider } from "@material-ui/core";
 import styled from "styled-components";
-
+import { useHistory } from "react-router-dom"
 export const SignIn = (props) => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
@@ -15,25 +15,57 @@ export const SignIn = (props) => {
 
   const signInDetails = useSelector((state) => state.signInDetails);
   const { userInfo } = signInDetails;
+  const history = useHistory();
 
-  const submitHandler = (event) => {
+
+  // const submitHandler = (event) => {
+  //   event.preventDefault();
+  //   dispatch(userSignin(username, password));
+  //   // props.history.push("/home");
+  // };
+
+
+  const submitHandler = async(event) => {
+
     event.preventDefault();
-    dispatch(userSignin(username, password));
-    // props.history.push("/home");
-  };
-  useEffect(() => {
-    // if (userInfo) {
-    //   props.history.push("/home");
-    // }
 
+   await  dispatch(userSignin(username, password))
+
+   routeUser();
+
+   
+
+}
+  // useEffect(() => {
+  //   // if (userInfo) {
+  //   //   props.history.push("/home");
+  //   // }
+
+
+  //   if(!userInfo.isAdmin){
+  //     props.history.push("/home");
+  //   }else if(userInfo.isAdmin){
+  //     props.history.push("/admindashboard");
+  //   }else{
+  //     props.history.push("/signin");
+  //   }
+  // }, [props.history, userInfo, dispatch]);
+
+  const routeUser = () => {
+    if(userInfo){
     if(!userInfo.isAdmin){
+
       props.history.push("/home");
+
     }else if(userInfo.isAdmin){
+
       props.history.push("/admindashboard");
+
     }else{
+
       props.history.push("/signin");
-    }
-  }, [props.history, userInfo, dispatch]);
+
+      }    }}
 
   return (
     <>

@@ -12,6 +12,8 @@ import { Details } from "./screens/Details";
 
 import { Home } from "./screens/Home";
 import { SignIn } from "./screens/SignIn";
+import { Admindashboard } from "./screens/admindashboard";
+import AddPartner from "./components/Addpartner";
 
 
 function App() {
@@ -20,8 +22,11 @@ function App() {
       {/* <Route component={NavBar}></Route> */}
       <NavBar />
       <br />
+      <Route path="/admindashboard" component={Admindashboard}></Route>
+      <Route path="/addpartner" component={AddPartner}></Route>
 
-      <Route path="/policy" component={AddPolicy}></Route>
+
+      <Route path="/policy" component={AddPolicy}></Route>      
       <Route path="/home" component={Home}></Route>
       <Route path="/details" component={Details}></Route>
       <Route path="/signin" component={SignIn}></Route>
